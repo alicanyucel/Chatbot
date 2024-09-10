@@ -1,17 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-chatbot',
   templateUrl: './chatbot.component.html',
   styleUrls: ['./chatbot.component.css']
 })
-export class ChatbotComponent {
+export class ChatbotComponent implements OnInit {
   messages: Array<{ text: string, sender: string }> = [];
   userInput: string = '';
-userMessage: any;
+  userMessage: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   sendMessage() {
     if (this.userInput.trim()) {
